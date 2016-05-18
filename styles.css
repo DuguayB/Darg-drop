@@ -1,7 +1,17 @@
 /* CSS file placeholder. */
+#_head {
+	width: 90%;
+	height: 90px;
+	margin: auto;
+	margin-top: 15px;
+	border-radius: 20px;
+	background-color: white;
+	text-align: center;
+}
+
 body
 {
-  background-color : #fff;
+  background-color : #222;
 }
 
 #myholder {
