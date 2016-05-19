@@ -3,7 +3,7 @@
 #_head {
 	width: 95%;
 	height: 90px;
-	margin: auto;
+	margin-left: 2%;
 	margin-top: 15px;
 	margin-bottom: 15px;
 	border-radius: 20px;
@@ -11,26 +11,27 @@
 	text-align: center;
 }
 
-#tools {
-	margin-left: 35px;
-	width: 15%;
-	height: 640px;
-	background-color: white;
-	border-radius: 20px;
-	display: inline-block;
-}
-
 body
 {
-  background-color : #222;
+  background-color : #555;
+
+}
+
+#tools {
+	margin-left: 2%;
+	margin-right: 1%;
+	width: 15%;
+	border-radius: 20px;
+	background-color: white;
+	height: 640px;
+	display: inline-block;
 }
 
 #myholder {
 	background-color: white;
-	margin-left: 20px;
-	width: 80%;
+	width: 79%;
 	height: 640px;
-	text-align: center;
 	display: inline-block;
+	text-align: center;
 	border-radius: 20px;
 }
