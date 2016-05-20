@@ -1,23 +1,44 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>hello</title>
-  <link rel="stylesheet" type="text/css" href="styles.css" />
-  <link rel="stylesheet" type="text/css" href="joint.css" />
+	<title>hello</title>
+	<link rel="stylesheet" type="text/css" href="styles.css" />
+	<link rel="stylesheet" type="text/css" href="joint.css" />
 </head>
 
 <body>
-	<div id="_head">APPLICATION</div>
-	<div id="tools"></div>
+	<header>
+		<div id="_head"><h1>Drag'n Drop Diagram Editor</h1></div>
+	</header>	
+	<section id="exporter">
+		<div id="canvas-name">
+			<h2>Workspace</h2>
+			<form id="formSaveCanvas">
+				<input type="text" placeholder="Your diagram name...">
+				<button>Export</button>
+			</form>
+		</div>
+		<div id="canvas">
+		</div>
+	</section>
+	<div id="tools">
+		<h2>Overview</h2>
+		<div id="myholder-small"></div>
+
+		<h2>Tools</h2>
+	</div>
+	<!--fixme <aside> -->
 	<div id="myholder"></div>
 
 
- 	<footer>
- 		<script src="jquery.min.js"></script>
+
+	<footer>
+		<script src="jquery.min.js"></script>
 		<script src="lodash.min.js"></script>
 		<script src="backbone-min.js"></script>
-  		<script src="main.js"></script>
+		<script src="main.js"></script>
 		<script src="joint.js"></script>
+		&copy; Sameh Cedric Brice Julien 2016
 	</footer>
 </body>
 

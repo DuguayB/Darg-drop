@@ -1,37 +1,108 @@
 /* CSS file placeholder. */
 
 #_head {
-	width: 95%;
 	height: 90px;
-	margin-left: 2%;
-	margin-top: 15px;
-	margin-bottom: 15px;
-	border-radius: 20px;
-	background-color: white;
+	margin: 15px auto;
+	margin-top: 0;
+	background-color: #4285F4;
 	text-align: center;
+	color: #FFF;
+	line-height: 90px;
+	box-shadow:  0 2px 10px #666;
+}
+
+h1
+{
+	margin-top: 0;
 }
 
 body
 {
-  background-color : #555;
-
+	background-color : #FFF;
+	margin: 0;
+	font-family: arial;
 }
 
 #tools {
 	margin-left: 2%;
 	margin-right: 1%;
 	width: 15%;
-	border-radius: 20px;
+	border-radius: 3px;
 	background-color: white;
-	height: 640px;
+	height: 700px;
 	display: inline-block;
+	overflow-y: auto;
+	overflow-x: hidden;
+	box-shadow: inset 0 0 20px #666;
+	padding-right: 15px;
 }
 
 #myholder {
 	background-color: white;
 	width: 79%;
-	height: 640px;
+	height: 700px;
 	display: inline-block;
 	text-align: center;
-	border-radius: 20px;
+	border-radius: 3px;
+	box-shadow: inset 0 0 20px #666;
+}
+
+#myholder-small
+{
+	overflow: hidden;
+	box-shadow: inset 0 0 2px #666;
+	position: relative;
+	border-radius: 3px;
+
+}
+
+#myholder-small:after
+{
+	content: '';
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	background: url('img/tv.png');
+	box-shadow: inset 0 0 20px #666;
+}
+
+h2 
+{
+	text-indent: 10px;
+	font-size: 16px;
+	margin-top: 20px;
+	color: #4285F4;
+}
+
+#exporter {
+	margin-top: 0px;
+	margin-left: 2%;
+	margin-bottom: 1%;
+}
+
+#canvas-name
+{
+	height: 60px;
+}
+
+#canvas-name button
+{
+	background: #5e9df4;
+	border: none;
+	color: #FFF;
+	height: 30px;
+	line-height: 30px;
+}
+footer
+{
+	height: 30px;
+	line-height: 30px;
+	flex-shrink: 0;
+
+	text-align: center;
+	background: #4285F4;
+	color: #F5F5F5;
+	box-shadow: 0 0 15px #333;
 }

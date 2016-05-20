@@ -1,3 +1,30 @@
+function new_img(path, pos_y, graph) {
+	var image = new joint.shapes.basic.Image({
+    	position : {x : 100, y : pos_y },
+    	size : { width : 50, height : 50 },
+    	attrs : { image : { "xlink:href" : path, width : 50, height : 50 }
+    			}
+	});
+	graph.addCell(image);
+}
+
+function a(){	
+	var htmlElement = joint.shapes.basic.Rect.extend({
+  		defaults: joint.util.deepSupplement({
+    	type: 'html.Element',
+    	attrs: {rect: { stroke: 'none', 'fill-opacity': 0 } }
+  		},	
+  		joint.shapes.basic.Rect.prototype.defaults)
+	});
+	test = new htmlElement({
+    	position: { x: 80, y: 80 },
+    	size: { width: 50, height: 50 },
+    	label: 'label',
+    	color: '#444444'
+  	});
+	return test;
+}
+
 $(document).ready(function() {
 
 
@@ -14,69 +41,12 @@ $(document).ready(function() {
         interactive: false
 	})
 
-	var image = new joint.shapes.basic.Image({
-    	position : {x : 100, y : 20 },
-    	size : { width : 50, height : 50 },
-    	attrs : { image : { "xlink:href" : "thalie_9843R1w1.jpg", width : 50, height : 50 }
-    			}
-	});
 
-
-	var image2 = new joint.shapes.basic.Image({
-    	position : {x : 100, y : 90 },
-    	size : { width : 50, height : 50 },
-    	attrs : { image : { "xlink:href" : "5655c3ff.jpg", width : 50, height : 50 } }
-	});
-	
-	var image3 = new joint.shapes.basic.Image({
-    	position : {x : 100, y : 160 },
-    	size : { width : 50, height : 50 },
-    	attrs : { image : { "xlink:href" : "Buttocksurgery.jpg", width : 50, height : 50 } }
-	});
-	
-	var image4 = new joint.shapes.basic.Image({
-    	position : {x : 100, y : 230 },
-    	size : { width : 50, height : 50 },
-    	attrs : { image : { "xlink:href" : "d5302569.jpg", width : 50, height : 50 } }
-	});
-
-	var image5 = new joint.shapes.basic.Image({
-    	position : {x : 100, y : 300 },
-    	size : { width : 50, height : 50 },
-    	attrs : { image : { "xlink:href" : "LOL.jpg", width : 50, height : 50 } }
-	});
-
-
-	// ------------------------------------------------------------------ CREATION D'UN ITEM AVEC PORTS (A RENDRE GENERIQUE) ---------------------------------------------
-
-	joint.shapes.devs.CircleModel = joint.shapes.devs.Model.extend({
-
-  		markup: '<g class="rotatable"><g class="scalable"><image class="body" href="LOL.jpg"/><button>ok</button></g><text class="label"/><g class="inPorts"/><g class="outPorts"/></g>',
-  		portMarkup: '<g class="port port<%= id %>"><rect class="port-body"/><text class="port-label"/></g>',
-
-  		defaults: joint.util.deepSupplement({
-    
-    		type: 'devs.CircleModel',
-    		attrs: {
-    			'.body': { width: 50, height: 50, stroke: 'blue', fill: 'lightblue' },
-      			'.port-body': { width: 10, height: 10, x: -5, stroke: 'gray', fill: 'lightgray', magnet: 'active' } }
-  			},
-  			joint.shapes.devs.Model.prototype.defaults)
-	});
-
-	joint.shapes.devs.CircleModelView = joint.shapes.devs.ModelView;
-
-	var m1 = new joint.shapes.devs.CircleModel({
-  		position: { x: 100, y: 370},
-  		size: { width: 50, height: 50 },
-	  	inPorts: ['', ''],
-  		outPorts: [''],
-	});
-
-	graph_tools.addCells([image, image2, image3, image4, image5, m1]);
-
-
-
+	new_img("thalie_9843R1w1.jpg", 20, graph_tools);
+	new_img("5655c3ff.jpg", 90, graph_tools);
+	new_img("Buttocksurgery.jpg", 160, graph_tools);
+	new_img("d5302569.jpg", 230, graph_tools);
+	new_img("LOL.jpg", 300, graph_tools);
 
 	//          --------------------------------------------------------- PAPER GRAPH PRINCIPAL --------------------------------------------------------------------------
 	var graph = new joint.dia.Graph;
@@ -141,14 +111,8 @@ $(document).ready(function() {
 
 	// ------------------------------------------------------------------------ BOX AUTOUR DES ITEMS AVEC BOUTONS (MARCHE PAS) -------------------------------------------------------
 
-	/*joint.shapes.html = {};
-	joint.shapes.html.Element = joint.shapes.basic.Rect.extend({
-  		defaults: joint.util.deepSupplement({
-    	type: 'html.Element',
-    	attrs: {rect: { stroke: 'none', 'fill-opacity': 0 } }
-  		},	
-  		joint.shapes.basic.Rect.prototype.defaults)
-	});
+
+	joint.shapes.html = {};
 
 	// Create a custom view for that element that displays an HTML div above it.
 	// -------------------------------------------------------------------------
@@ -194,12 +158,23 @@ $(document).ready(function() {
   		}
 	});
 
-	var lol = new joint.shapes.html.Element({
-    	position: { x: 80, y: 80 },
-    	size: { width: 50, height: 50 },
-    	label: 'label',
-    	color: '#444444'
+	var lol = a();
+	graph.addCell(lol);
+
+
+	// ---------------------------------------------------------- OVERVIEW AU DESSUS DE LA TOOL BAR --------------------------------------------------------------------------
+  	var $cont = $('#myholder-small');
+  	var $large = $('#myholder');
+  	var ratio = $cont.width() / $large.width();
+
+  	var paperSmall = new joint.dia.Paper({
+  		el: $('#myholder-small'),
+  		width: $cont.width(),
+  		height: ratio * $large.height(),
+  		model: graph,
+  		gridSize: 1
   	});
-	graph.addCell(lol);*/
+  	paperSmall.scale(ratio);
+  	paperSmall.$el.css('pointer-events', 'none');
 });
 
