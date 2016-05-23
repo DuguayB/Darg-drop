@@ -1,76 +1,73 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title>hello</title>
+	<title>IHM Drag'n Drop</title>
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<link rel="stylesheet" type="text/css" href="css/styles.css" />
+	<link rel="stylesheet" type="text/css" href="css/jquery-ui.min.css">
 	<link rel="stylesheet" type="text/css" href="css/joint.css" />
-	<link href="http://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+	<link rel="stylesheet" type="text/css" href="css/icomoon/style.css" />
 	<link type="text/css" rel="stylesheet" href="css/materialize.min.css" media="screen,projection">
+	<link href="http://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+	<link rel="stylesheet" type="text/css" href="css/styles.css" />
+	
 </head>
 
 <body>
-	<div id="_head"><h1>Drag'n Drop Diagram Editor</h1></div>
-	<!--fixme <header> -->
-	<section>
-		<div id="canvas-name">
-			<h2>Workspace</h2>
-			<form id="formSaveCanvas">
-				<input type="text" name="name" placeholder="Your diagram name...">
-				<button type="submit">Export</button>
-			</form>
+	<header>
+		<h1>Drag'n Drop Diagram Editor</h1>
+	</header>
+	<main>
+		<section>
+			<div id="canvas-name">
+				<h2>Workspace</h2>
+				<form id="formSaveCanvas">
+					<input type="text" name="name" placeholder="Your diagram name...">
+					<button type="submit">Export</button>
+				</form>
+			</div>
+			<div id="canvas">
+			</div>
+		</section>
+		<div id="tools">
+			<h2>Overview</h2>
+			<div id="myholder-small"></div>
+
+			<ul class="collapsible" data-collapsible="accordion">
+				<li>
+					<div class="collapsible-header"><i class="material-icons">filter_drama</i>First</div>
+					<div class="collapsible-body"><p>Lorem ipsum dolor sit amet.</p></div>
+				</li>
+				<li>
+					<div class="collapsible-header"><i class="material-icons">place</i>Second</div>
+					<div class="collapsible-body"><p>Lorem ipsum dolor sit amet.</p></div>
+				</li>
+				<li>
+					<div class="collapsible-header"><i class="material-icons">whatshot</i>Third</div>
+					<div class="collapsible-body"><p>Lorem ipsum dolor sit amet.</p></div>
+				</li>
+				<li>
+					<div class="collapsible-header"><i class="material-icons">whatshot</i>Third</div>
+					<div class="collapsible-body"><p>Lorem ipsum dolor sit amet.</p></div>
+				</li>
+			</ul>
+			<h2>Tools</h2>
 		</div>
-		<div id="canvas">
-		</div>
-	</section>
-	<div id="tools">
-		<h2>Overview</h2>
-		<div id="myholder-small"></div>
-
-		<ul class="collapsible" data-collapsible="accordion">
-			<li>
-				<div class="collapsible-header"><i class="material-icons">filter_drama</i>First</div>
-				<div class="collapsible-body"><p>Lorem ipsum dolor sit amet.</p></div>
-			</li>
-			<li>
-				<div class="collapsible-header"><i class="material-icons">place</i>Second</div>
-				<div class="collapsible-body"><p>Lorem ipsum dolor sit amet.</p></div>
-			</li>
-			<li>
-				<div class="collapsible-header"><i class="material-icons">whatshot</i>Third</div>
-				<div class="collapsible-body"><p>Lorem ipsum dolor sit amet.</p></div>
-			</li>
-			<li>
-				<div class="collapsible-header"><i class="material-icons">whatshot</i>Third</div>
-				<div class="collapsible-body"><p>Lorem ipsum dolor sit amet.</p></div>
-			</li>
-		</ul>
-
-
-
-
-
-
-		
-
-		<h2>Tools</h2>
-	</div>
-	<!--fixme <aside> -->
-	<div id="myholder"></div>
-
-
+		<!--fixme <aside> -->
+		<div id="myholder"></div>
+	</main>
 
 	<footer>
-		<script src="js/jquery.min.js"></script>
-		<script src="js/lodash.min.js"></script>
-		<script src="js/backbone-min.js"></script>
-		<script src="js/main.js"></script>
-		<script src="js/joint.js"></script>
-		<script type="text/javascript" src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
-		<script type="text/javascript" src="js/materialize.min.js"></script>
 		&copy; Sameh Cedric Brice Julien 2016
 	</footer>
+
+	<script src="js/jquery.min.js"></script>
+	<script src="js/lodash.min.js"></script>
+	<script src="js/backbone-min.js"></script>
+	<script type="text/javascript" src="js/jquery-ui.min.js"></script>
+	<script src="js/joint.js"></script>
+	<script type="text/javascript" src="js/materialize.min.js"></script>
+	<script src="js/main.js"></script>
 </body>
 
 </html>

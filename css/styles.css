@@ -1,6 +1,13 @@
 /* CSS file placeholder. */
 
-#_head {
+main
+{
+	flex: 2;
+	display: flex;
+}
+
+header
+ {
 	height: 90px;
 	margin: 15px auto;
 	margin-top: 0;
@@ -45,6 +52,7 @@ body
 	text-align: center;
 	border-radius: 3px;
 	box-shadow: inset 0 0 20px #666;
+	position: relative;
 }
 
 #myholder-small
@@ -64,7 +72,7 @@ body
 	left: 0;
 	width: 100%;
 	height: 100%;
-	background: url('img/tv.png');
+	background: url('../img/tv.png');
 	box-shadow: inset 0 0 20px #666;
 }
 
@@ -79,7 +87,7 @@ h2
 
 #canvas-name
 {
-	height: 60px;
+	padding: 20px 0;
 }
 
 #canvas-name button
@@ -90,6 +98,92 @@ h2
 	height: 30px;
 	line-height: 30px;
 }
+
+#myholder .selection
+{
+	border: 2px dotted #5e9df4;
+	position: absolute;
+	width: 0;
+	height: 0;
+	z-index: 15;
+	pointer-events: none;
+}
+
+#myholder .selection .action
+{
+	position: absolute;
+	cursor: pointer;
+	pointer-events: auto;
+	color: #666;
+}
+
+#myholder .selection .action:hover
+{
+	color: #1c61f4;
+	font-weight: bold;
+}
+
+#myholder .selection .icon-delete
+{
+	top: -20px;
+	left: -20px;
+}
+
+#myholder .selection .action.icon-delete:hover
+{
+	color: #ff7f80;
+	font-weight: normal;
+}
+
+#myholder .selection .icon-copy
+{
+	bottom: -20px;
+	left: -20px;
+}
+
+#myholder .selection .icon-link
+{
+	bottom: -20px;
+	right: -20px;
+}
+
+#myholder .selection .ui-resizable-handle
+{
+	pointer-events: auto;
+	width: 10px;
+	height: 10px;
+	background: #FFF;
+	border: 1px solid #CCC;
+}
+
+#myholder .selection .ui-resizable-se
+{
+	bottom: -5px;
+	right: -5px;
+}
+
+#myholder .selection .ui-resizable-sw
+{
+	bottom: -5px;
+	left: -5px;
+}
+
+#myholder .selection .ui-resizable-nw
+{
+	top: -5px;
+	left: -5px;
+}
+
+#myholder .selection .ui-resizable-ne
+{
+	top: -5px;
+	right: -5px;
+}
+
+
+
+
+
 footer
 {
 	height: 30px;
